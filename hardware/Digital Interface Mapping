@@ -1,0 +1,17 @@
+# Digital Interface Maping
+
+PPG Sensor (MAX86141)
+MOSI -> P1.12
+MISO -> P1.13
+SCLK -> P1.14
+CS -> P1.15
+
+IMU Sensor (ICM20948)
+MOSI ->P0.21
+MISO ->P0.22
+SCLK ->P0.20
+CS ->P0.23
+
+Battery Monitor (BQ27441)
+SDA -> P1.02
+SCL -> P1.03
