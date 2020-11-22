@@ -1,0 +1,48 @@
+#Remove Data folder recursively for exclusions to apply
+**/data/*
+
+#Remove tensorflow lite model file
+*.tflite
+
+#skip any README, .py or .gitkeep
+!*README*
+!.gitkeep
+!*.py
+!*.sh
+
+# Temporary OS files
+.DS_Store
+
+# TensorFlow Checkpoint files
+checkpoint
+*.index
+*.data*
+*.v2
+
+# Jupyter Checkpoint files
+*.ipynb_checkpoints
+
+#manual log files
+*.log
+*debug.txt
+
+# Byte-compiled / optimized / DLL files
+__pycache__
+*.py[cod]
+*$py.class
+*.o
+*.elf
+*.hex
+*.d
+
+
+#remove the build information specific to nrf5340 as this will be built manually with CMakeLists.txt
+edge-deployment/app_core
+
+software/tutorials/AEHR_model_tutorial/tutorial.py
+software/tutorials/AEHR_model_tutorial/.idea/modules.xml
+software/tutorials/AEHR_model_tutorial/.idea/misc.xml
+*.xml
+*.iml
+software/tutorials/AEHR_model_tutorial/tutorial.py
+software/tutorials/AEHR_model_tutorial/tutorial.py

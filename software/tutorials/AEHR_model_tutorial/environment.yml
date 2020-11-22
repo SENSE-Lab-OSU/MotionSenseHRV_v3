@@ -1,0 +1,13 @@
+name: tf_MSHRV3_AEHR
+channels:
+  - defaults
+dependencies:
+  - python=3.6
+  - pip
+  - jupyter
+  - pandas
+  - seaborn
+  - pydot
+  - pip:
+    - tf-nightly
+    - tensorflow-model-optimization
