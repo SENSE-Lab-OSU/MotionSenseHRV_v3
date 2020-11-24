@@ -37,12 +37,11 @@ __pycache__
 
 
 #remove the build information specific to nrf5340 as this will be built manually with CMakeLists.txt
-edge-deployment/app_core
 
-software/tutorials/AEHR_model_tutorial/tutorial.py
-software/tutorials/AEHR_model_tutorial/.idea/modules.xml
-software/tutorials/AEHR_model_tutorial/.idea/misc.xml
+software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated/build_nrf5340pdk_nrf5340_cpuapp
+
+software/tutorials/AEHR_model_tutorial/Edge-BLE-build/net_core/CodeTF_BLE_integrated/build_nrf5340pdk_nrf5340_cpunet
+
 *.xml
 *.iml
-software/tutorials/AEHR_model_tutorial/tutorial.py
-software/tutorials/AEHR_model_tutorial/tutorial.py
+

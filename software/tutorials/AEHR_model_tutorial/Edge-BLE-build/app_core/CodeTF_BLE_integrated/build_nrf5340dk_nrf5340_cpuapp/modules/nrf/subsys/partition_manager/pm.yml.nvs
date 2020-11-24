@@ -1,0 +1,3 @@
+nvs_storage:
+  placement: {before: [end]}
+  size: 0x6000

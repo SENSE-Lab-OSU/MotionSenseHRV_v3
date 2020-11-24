@@ -1,0 +1,13 @@
+# Target labels
+ hci_rpmsg_subimage
+# Source files and their labels
+/home/devan/Documents/MotionSenseHRV_v3/software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated/build_nrf5340dk_nrf5340_cpuapp/modules/nrf/samples/CMakeFiles/hci_rpmsg_subimage
+/home/devan/Documents/MotionSenseHRV_v3/software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated/build_nrf5340dk_nrf5340_cpuapp/modules/nrf/samples/CMakeFiles/hci_rpmsg_subimage.rule
+/home/devan/Documents/MotionSenseHRV_v3/software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated/build_nrf5340dk_nrf5340_cpuapp/modules/nrf/samples/CMakeFiles/hci_rpmsg_subimage-complete.rule
+/home/devan/Documents/MotionSenseHRV_v3/software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated/build_nrf5340dk_nrf5340_cpuapp/modules/nrf/samples/hci_rpmsg_subimage-prefix/src/hci_rpmsg_subimage-stamp/hci_rpmsg_subimage-install.rule
+/home/devan/Documents/MotionSenseHRV_v3/software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated/build_nrf5340dk_nrf5340_cpuapp/modules/nrf/samples/hci_rpmsg_subimage-prefix/src/hci_rpmsg_subimage-stamp/hci_rpmsg_subimage-mkdir.rule
+/home/devan/Documents/MotionSenseHRV_v3/software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated/build_nrf5340dk_nrf5340_cpuapp/modules/nrf/samples/hci_rpmsg_subimage-prefix/src/hci_rpmsg_subimage-stamp/hci_rpmsg_subimage-download.rule
+/home/devan/Documents/MotionSenseHRV_v3/software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated/build_nrf5340dk_nrf5340_cpuapp/modules/nrf/samples/hci_rpmsg_subimage-prefix/src/hci_rpmsg_subimage-stamp/hci_rpmsg_subimage-update.rule
+/home/devan/Documents/MotionSenseHRV_v3/software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated/build_nrf5340dk_nrf5340_cpuapp/modules/nrf/samples/hci_rpmsg_subimage-prefix/src/hci_rpmsg_subimage-stamp/hci_rpmsg_subimage-patch.rule
+/home/devan/Documents/MotionSenseHRV_v3/software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated/build_nrf5340dk_nrf5340_cpuapp/modules/nrf/samples/hci_rpmsg_subimage-prefix/src/hci_rpmsg_subimage-stamp/hci_rpmsg_subimage-configure.rule
+/home/devan/Documents/MotionSenseHRV_v3/software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated/build_nrf5340dk_nrf5340_cpuapp/modules/nrf/samples/hci_rpmsg_subimage-prefix/src/hci_rpmsg_subimage-stamp/hci_rpmsg_subimage-build.rule
