@@ -326,8 +326,8 @@ void timer_handler(nrf_timer_event_t event_type, void* p_context)
 
     switch (event_type)
     {
-    	uint8_t new_period;
-    	uint8_t dataPacket[TFMICRO_DATA_LEN]; // Data packet sent in the TF lite service, contains 3 Bytes 
+    	float *new_period;
+    	float dataPacket[TFMICRO_DATA_LEN]; // Data packet sent in the TF lite service, contains 3 Bytes 
     	
         case NRF_TIMER_EVENT_COMPARE0:
         	global_counter++; // Packet counter 
@@ -339,18 +339,17 @@ void timer_handler(nrf_timer_event_t event_type, void* p_context)
 			k_work_submit(&my_device.work); // Schedule a work in the workqueue to notify battery level
         	}
         	
-        	if(global_counter % 100 ==0) { // Executes every 40 ms
+        	if(global_counter % 10 ==0) { // Executes every 40 ms
         	   	new_period = loop();
                         //new code
-                        for(int i = 0; i < 16; i++;){
-                            dataPacket[i] = newperiod[i];
+                        for (int i = 0; i < 16; i++){
+                            dataPacket[i] = new_period[i];
                         }
-                        //end new code, but correct the global counter to maybe be at position 18 and 19
-        	    	dataPacket[0] = new_period;
-        	    	dataPacket[1] = (uint8_t)((global_counter& 0xFF00)>>8);
-        	    	dataPacket[2] = (uint8_t)((global_counter& 0x00FF));        	    
+     
+        	    	dataPacket[1] = (float)((global_counter& 0xFF00)>>8);
+        	    	dataPacket[2] = (float)((global_counter& 0x00FF));        	    
 		    	my_service.dataPacket = dataPacket;
-		    	my_service.packetLength = sizeof(dataPacket);
+		    	my_service.packetLength = (uint16_t)sizeof(dataPacket);
 		    	//printk("global counter=%u,size=%u\n",global_counter,sizeof(dataPacket));
 		    	k_work_submit(&my_service.work); // Schedule a work in the workqueue to send TF lite data
         	}    

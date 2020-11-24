@@ -17,12 +17,14 @@ limitations under the License.
 
 #include "tensorflow/lite/micro/all_ops_resolver.h"
 #include "constants.h"
-#include "model.h"
+#include "aencoder.h"
 #include "output_handler.h"
 #include "tensorflow/lite/micro/micro_error_reporter.h"
 #include "tensorflow/lite/micro/micro_interpreter.h"
 #include "tensorflow/lite/schema/schema_generated.h"
 #include "tensorflow/lite/version.h"
+
+#include "sample_test.cc"
 
 #include <zephyr.h>
 
@@ -39,7 +41,7 @@ int inference_count = 0;
 // Create an area of memory to use for input, output, and intermediate arrays.
 // Minimum arena size, at the time of writing. After allocating tensors
 // you can retrieve this value by invoking interpreter.arena_used_bytes().
-const int kModelArenaSize = 2512;
+const int kModelArenaSize = 123904;
 // Extra headroom for model + alignment + future interpreter changes.
 const int kExtraArenaSize = 560 + 16 + 100;
 const int kTensorArenaSize = kModelArenaSize + kExtraArenaSize;
@@ -104,16 +106,16 @@ void setup()
 }
 
 // The name of this function is important for Arduino compatibility.
-int* loop()
+float* loop()
 {
         //first set our output array
-        static int arr_result[16];
+        static float arr_result[16];
 
 	//get a ppg sample to feed into the model. We this is an 8 second
 	// sample for a total of 400 values, whitch should be placed in our input.
 	
 
-	n_dims = input->dims;
+        TfLiteIntArray* n_dims = input->dims;
 	// Place the calculated ppg value in the model's input tensor
 
         /*.f is not actually the floating point cast, it is a a structure member
@@ -136,9 +138,8 @@ int* loop()
 	//Now we run inference, and report any error
 	TfLiteStatus invoke_status = interpreter->Invoke();
 	if (invoke_status != kTfLiteOk) {
-		TF_LITE_REPORT_ERROR(error_reporter,
-				     "Invoke failed on x_val: %f\n",
-				     static_cast<double>(x_val));
+		TF_LITE_REPORT_ERROR(error_reporter,"Invoke failed");
+				    
 		return NULL;
 	}
 
@@ -147,16 +148,18 @@ int* loop()
 
 	// Output the results. A custom HandleOutput function can be implemented
 	// for each supported hardware target.
-	output_tf = HandleOutput(error_reporter, x_val, y_val);
+
         
         for (int i = 0; i < 16; i++){
             arr_result[i] = output->data.f[i];
+            }
 
 	// Increment the inference_counter, and reset it if we have reached
 	// the total number per cycle
 	inference_count += 1;
         if (inference_count > 2000){
             inference_count = 0;
+                       }
 	return arr_result;	
 }
   

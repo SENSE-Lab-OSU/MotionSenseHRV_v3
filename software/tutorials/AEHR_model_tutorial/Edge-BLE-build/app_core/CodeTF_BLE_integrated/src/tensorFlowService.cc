@@ -119,7 +119,7 @@ BT_GATT_CCC(on_cccd_changed,
 /* This function sends a notification to a Client with the provided data,
 given that the Client Characteristic Control Descripter has been set to Notify (0x1).
 It also calls the on_sent() callback if successful*/
-void tfMicro_service_send(struct bt_conn *conn, const uint8_t *data, uint16_t len)
+void tfMicro_service_send(struct bt_conn *conn, const float *data, uint16_t len)
 {
     /* 
     The attribute for the TX characteristic is used with bt_gatt_is_subscribed 
