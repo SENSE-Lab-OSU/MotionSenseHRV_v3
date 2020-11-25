@@ -1,0 +1,26 @@
+app:
+  address: 0x0
+  region: flash_primary
+  size: 0xfa000
+nvs_storage:
+  address: 0xfa000
+  placement:
+    before:
+    - end
+  region: flash_primary
+  size: 0x6000
+otp:
+  address: 0xff8100
+  region: otp
+  size: 0x2fc
+rpmsg_nrf53_sram:
+  address: 0x20070000
+  placement:
+    before:
+    - end
+  region: sram_primary
+  size: 0x10000
+sram_primary:
+  address: 0x20000000
+  region: sram_primary
+  size: 0x70000

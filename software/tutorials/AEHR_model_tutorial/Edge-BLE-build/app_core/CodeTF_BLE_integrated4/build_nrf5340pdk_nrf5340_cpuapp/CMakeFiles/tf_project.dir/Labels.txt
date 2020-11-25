@@ -1,0 +1,13 @@
+# Target labels
+ tf_project
+# Source files and their labels
+/home/devan/Documents/MotionSenseHRV_v3/software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated4/build_nrf5340pdk_nrf5340_cpuapp/CMakeFiles/tf_project
+/home/devan/Documents/MotionSenseHRV_v3/software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated4/build_nrf5340pdk_nrf5340_cpuapp/CMakeFiles/tf_project.rule
+/home/devan/Documents/MotionSenseHRV_v3/software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated4/build_nrf5340pdk_nrf5340_cpuapp/CMakeFiles/tf_project-complete.rule
+/home/devan/Documents/MotionSenseHRV_v3/software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated4/build_nrf5340pdk_nrf5340_cpuapp/tf_project-prefix/src/tf_project-stamp/tf_project-install.rule
+/home/devan/Documents/MotionSenseHRV_v3/software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated4/build_nrf5340pdk_nrf5340_cpuapp/tf_project-prefix/src/tf_project-stamp/tf_project-mkdir.rule
+/home/devan/Documents/MotionSenseHRV_v3/software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated4/build_nrf5340pdk_nrf5340_cpuapp/tf_project-prefix/src/tf_project-stamp/tf_project-download.rule
+/home/devan/Documents/MotionSenseHRV_v3/software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated4/build_nrf5340pdk_nrf5340_cpuapp/tf_project-prefix/src/tf_project-stamp/tf_project-update.rule
+/home/devan/Documents/MotionSenseHRV_v3/software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated4/build_nrf5340pdk_nrf5340_cpuapp/tf_project-prefix/src/tf_project-stamp/tf_project-patch.rule
+/home/devan/Documents/MotionSenseHRV_v3/software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated4/build_nrf5340pdk_nrf5340_cpuapp/tf_project-prefix/src/tf_project-stamp/tf_project-configure.rule
+/home/devan/Documents/MotionSenseHRV_v3/software/tutorials/AEHR_model_tutorial/Edge-BLE-build/app_core/CodeTF_BLE_integrated4/build_nrf5340pdk_nrf5340_cpuapp/tf_project-prefix/src/tf_project-stamp/tf_project-build.rule
