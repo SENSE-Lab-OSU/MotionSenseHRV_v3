@@ -28,14 +28,15 @@ limitations under the License.
 
 
 #if USENEWMODEL == 1
+#include "model.h"
+#define MODEL_LEN 2500
+#define MODEL_HEADROOM 200
+#define g_modelurd2 0
+
+#else
 #include "aencoder.h"
 #define MODEL_LEN 123904
 #define MODEL_HEADROOM 200000
-
-#else
-#include "model.h"
-#define MODEL_LEN 2512
-#define MODEL_HEADROOM 676
 #define g_modelurd 0
 #endif
 
