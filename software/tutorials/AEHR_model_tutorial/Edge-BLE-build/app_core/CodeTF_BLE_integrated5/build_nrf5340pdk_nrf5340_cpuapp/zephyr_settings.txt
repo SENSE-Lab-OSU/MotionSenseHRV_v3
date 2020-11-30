@@ -1,2 +1,0 @@
-"BOARD_ROOT":"/home/devan/Documents/ncs/nrf"
-"DTS_ROOT":"/home/devan/Documents/ncs/nrf"

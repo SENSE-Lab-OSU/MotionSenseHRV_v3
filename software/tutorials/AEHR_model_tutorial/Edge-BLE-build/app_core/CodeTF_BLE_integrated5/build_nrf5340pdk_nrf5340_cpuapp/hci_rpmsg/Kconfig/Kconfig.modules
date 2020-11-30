@@ -1,6 +1,0 @@
-osource "/home/devan/Documents/ncs/nrf/Kconfig.nrf"
-
-osource "/home/devan/Documents/ncs/bootloader/mcuboot/zephyr/Kconfig"
-
-osource "/home/devan/Documents/ncs/nrfxlib/Kconfig.nrfxlib"
-
