@@ -19,6 +19,7 @@ from threading import Thread
 import subprocess
 
 
+
 '''
 For Adaptive setting:
 20 s calibration time. Have some margin from Saturation, ma.
@@ -71,7 +72,7 @@ BATTERY_CHAR_UUID    = 0x2A19
 MOTION_SERVICE_UUID  = 0x5D22
 MOTION_ACCELERO_CHAR_UUID = 0xC922
 CCCD_UUID            = 0x2902
-
+TF_UUID = 0x5D22
 
 
 
@@ -146,6 +147,14 @@ class ScanDelegate(DefaultDelegate):
     def handleDiscovery(self, dev, isNewDev, isNewData):
         print(strftime("%Y-%m-%d %H:%M:%S", gmtime()), dev.addr, dev.getScanData())
         sys.stdout.flush()
+    
+    def handleNotification(self, cHandle, data):
+        print("data recived!")
+        print("data = ", data)
+        parsed = struct.pack('f', data)
+        new_num = struct.unpack('16f', parsed)
+        print(new_num)
+
         
 def main():
     scanner = Scanner().withDelegate(ScanDelegate())
@@ -180,15 +189,17 @@ def main():
         
     msHrv1.setDelegate(md1)    
         
-         
+    services = getServices()     
     msHrv1.motionHRVplus.set_motion_notification(True)
     #msHrv1.motionHRVplus.set_magneto_notification(True)   
-        
-    
-         
+    tf_sercive_UUID = 'DA395D22-1D81-48E2-9C68-D0AE4BBD351F'
+    print("Connecting to Tf service UUID")
+
+    print('Now collecting measurements...')     
     while 1:
-         msHrv1.waitForNotifications(5)
-    print('Now collecting measurements...')
+         msHrv1.waitForNotifications(30)
+         print("notification recived!")
+    
          
          
     
