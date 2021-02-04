@@ -1,0 +1,47 @@
+FROM conda_gcc
+
+RUN mkdir -p /files/reqs/gnuarmemb && \
+    mkdir -p /files/reqs/embstunord && \
+    mkdir -p /files/reqs/nRFCLT && \
+    mkdir -p /files/reqs/ncs
+
+RUN apt-get update && apt-get install -y \
+    libncurses5
+	
+WORKDIR /files/reqs/nRFCLT
+RUN wget https://www.nordicsemi.com/-/media/Software-and-other-downloads/Desktop-software/nRF-command-line-tools/sw/Versions-10-x-x/10-12-1/nRFCommandLineTools10121Linuxamd64.tar.gz && \
+    tar -xvzf nRFCommandLineTools10121Linuxamd64.tar.gz && \
+    rm nRFCommandLineTools10121Linuxamd64.tar.gz && \
+	dpkg -i JLink_Linux_V688a_x86_64.deb
+
+WORKDIR /files/reqs/gnuarmemb
+RUN wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2 && \
+    tar -xvjf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2 && \
+    rm gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+
+ENV ZEPHYR_TOOLCHAIN_VARIANT=gnuarmemb
+ENV GNUARMEMB_TOOLCHAIN_PATH="/files/reqs/gnuarmemb"
+
+WORKDIR /files/reqs/ncs
+RUN west init -m https://github.com/nrfconnect/sdk-nrf --mr v1.4.0 && \
+    west update && \
+    west zephyr-export && \
+    pip install -r zephyr/scripts/requirements.txt && \
+    pip install -r nrf/scripts/requirements.txt && \
+    pip install -r bootloader/mcuboot/scripts/requirements.txt
+    
+RUN echo ". /files/reqs/ncs/zephyr/zephyr-env.sh" >> ~/.bashrc
+#SHELL ["/bin/bash", "-c", ". /files/reqs/ncs/zephyr/zephyr-env.sh"]
+	
+WORKDIR /files/reqs/embstunord
+RUN wget -O EmbeddedStudio_ARM_Nordic_v534a_linux_x64.tar.gz https://segger.com/downloads/embedded-studio/embeddedstudio_arm_nordic_linux_x64 && \
+    tar -xvzf EmbeddedStudio_ARM_Nordic_v534a_linux_x64.tar.gz && \
+    rm EmbeddedStudio_ARM_Nordic_v534a_linux_x64.tar.gz
+	
+# Set the working directory to /app
+WORKDIR /files/shared
+
+# Make port 8888 available to the world outside this container
+EXPOSE 8888
+
+ENTRYPOINT sh /files/reqs/docker_entrypoint.sh

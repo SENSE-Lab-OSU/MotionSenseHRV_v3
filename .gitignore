@@ -1,5 +1,6 @@
 #Remove Data folder recursively for exclusions to apply
 **/data/*
+**/experiments/*
 
 #Remove tensorflow lite model file
 *.tflite

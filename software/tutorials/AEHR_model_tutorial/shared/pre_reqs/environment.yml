@@ -1,4 +1,4 @@
-name: tf_MSHRV3_AEHR
+name: tf_MS3
 channels:
   - defaults
 dependencies:
@@ -8,6 +8,10 @@ dependencies:
   - pandas
   - seaborn
   - pydot
+  - graphviz
   - pip:
     - tf-nightly
     - tensorflow-model-optimization
+    - bluepy
+    - west
+    - bleak

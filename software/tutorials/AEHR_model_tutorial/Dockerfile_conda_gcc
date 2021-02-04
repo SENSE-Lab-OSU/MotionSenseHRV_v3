@@ -1,0 +1,40 @@
+FROM continuumio/miniconda3
+
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    vim \
+    gcc \
+    build-essential \
+    bluez \
+    bluetooth \
+    --no-install-recommends \
+    cmake \
+    ninja-build \
+    gperf \
+    ccache \
+    dfu-util \
+    device-tree-compiler \
+    xz-utils \
+    file \
+    make \
+    gcc-multilib \
+    g++-multilib \
+    libsdl2-dev && \
+    rm -rf /var/lib/apt/lists/*
+
+
+COPY ./shared/pre_reqs /files/shared/pre_reqs
+
+# Install the required libraries
+RUN conda env create -f /files/shared/pre_reqs/environment.yml
+
+#Activate the created environment as the default
+RUN echo "conda activate tf_MS3" >> ~/.bashrc
+ENV PATH /opt/conda/envs/tf_MS3/bin:$PATH
+ENV CONDA_DEFAULT_ENV tf_MS3
+
+# Make port 8888 available to the world outside this container
+EXPOSE 8888
+
+# Create mountpoint
+VOLUME /files/shared

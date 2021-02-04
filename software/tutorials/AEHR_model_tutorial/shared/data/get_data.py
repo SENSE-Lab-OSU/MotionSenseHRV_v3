@@ -42,8 +42,8 @@ def get_file(zip_file_url,zip_path,dir_path):
     return
 
 def main():
-    zip_file_urls = ['https://osu.box.com/shared/static/v2t78vd2wzp8drio3u2rtsx387ltya4w.zip',
-                     'https://osu.box.com/shared/static/2o58p7u8ggw5c1z05l02mdetwhmob4bl.zip']
+    zip_file_urls = ['https://osu.box.com/shared/static/0udt0xmitcbm3lkd0u3meq1wpya75h5p.zip',
+                     'https://osu.box.com/shared/static/hwmd05bi26md2rowuiqfc2mc25ceehqv.zip']
     zip_paths=['./data/pre-training.zip','./data/post-training.zip']
     #dir_path=''#zip_path[:-4]#'./bio_gen_model/post-training_test'
     for i in range(2):
